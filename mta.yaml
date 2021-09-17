@@ -1,0 +1,19 @@
+ID: MMVOD_XX_GIT
+_schema-version: '2.1'
+version: 0.0.1
+
+modules:
+ - name: MMVOD_DB_GIT
+   type: hdb
+   path: MMVOD_DB_GIT
+   requires:
+    - name: hdi_MMVOD_DB_GIT
+
+resources:
+ - name: hdi_MMVOD_DB_GIT
+   parameters:
+      config:
+         schema: MMVOD_GIT
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
